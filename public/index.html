@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Productos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <!--Bootswatch-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/yeti/bootstrap.min.css" integrity="sha384-mLBxp+1RMvmQmXOjBzRjqqr0dP9VHU2tb3FK6VB0fJN/AOu7/y+CAeYeWJZ4b3ii" crossorigin="anonymous">
+
+   
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">Home</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Carrito</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">ABM productos</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <div class="container p-5">
+        <div class="formulario-productos">
+            <h1>Ingrese un Producto</h1>
+            <br>
+
+            <form class="form" action="/api/productos" method="POST">
+                <!-- Campo nombre del producto -->
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" class="form-control" type="text" name="nombre" required>
+                </div>
+                <!-- Campo decripción del producto -->
+                <div class="form-group">
+                  <label for="descripcion">Descripción</label>
+                  <input id="descripcion" class="form-control" type="text" name="descripcion" required>
+                </div>
+                <!-- Campo código del producto -->
+                <div class="form-group">
+                  <label for="codigo">Código</label>
+                  <input id="codigo" class="form-control" type="number" name="codigo" required>
+                </div>
+                <!-- Campo url de la foto del producto -->
+                <div class="form-group">
+                  <label for="foto">Foto (url)</label>
+                  <input id="foto" class="form-control" type="url" name="thumbnail">
+                </div>
+                <!-- Campo precio del producto -->
+                <div class="form-group">
+                    <label for="precio">Precio</label>
+                    <input id="precio" class="form-control" type="number" step="0.01" name="price" required>
+                </div>
+                <!-- Campo stock del producto -->
+                <div class="form-group">
+                  <label for="stock">Stock</label>
+                  <input id="stock" class="form-control" type="number" name="stock" required>
+                </div>
+                <!-- Botón de envío de formulario -->
+                <input class="btn btn-success" type="submit" value="Enviar">
+            </form>
+        </div>
+    </div>    
+    <script src="js/main.js"></script>
+</body>
+
+</html>
